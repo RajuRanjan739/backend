@@ -8,6 +8,7 @@ import bookingsRouter from "./routes/booking_routes";
 import cors from "cors";
 dotenv.config();
 const app= express()
+const PORT= process.env.PORT || 5000
 
 //middlewares
 app.use(express.json());
@@ -24,7 +25,7 @@ app.use(cors({"origin": "*",
 
 mongoose.connect(`mongodb+srv://admin:${process.env.Mongo_Password}@cluster0.rmqe3zu.mongodb.net/?retryWrites=true&w=majority`
 )
-.then(()=>app.listen(5000,()=>console.log("connected server to database")
+.then(()=>app.listen(PORT,()=>console.log("connected server to database")
 )
 )
 .catch((e)=>console.log(e))
