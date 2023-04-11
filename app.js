@@ -16,7 +16,7 @@ app.use("/user",userRouter);
 app.use("/admin",adminRouter);
 app.use("/movie",movieRouter);
 app.use("/booking",bookingsRouter)
-app.use(cors({"origin": "https://bookingshow.onrender.com",
+app.use(cors({"origin": "*",
 "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
 "preflightContinue": false,
 "optionsSuccessStatus": 204,
