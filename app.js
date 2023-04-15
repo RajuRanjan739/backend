@@ -22,6 +22,11 @@ app.use(cors({"origin": "*",
 "optionsSuccessStatus": 204,
 }));
 
+app.get("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials","true");
+  res.send("API is running..");
+});
+
 
 mongoose.connect(`mongodb+srv://admin:${process.env.Mongo_Password}@cluster0.rmqe3zu.mongodb.net/?retryWrites=true&w=majority`
 )
